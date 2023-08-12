@@ -1,0 +1,26 @@
+<div class="bar">
+    <div class="bar__buttons">
+        <div eventDropdown>
+            <button class="buttons__button">
+                <span>Сортировать</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM3.65806 6.10074L6.69293 9.74258C6.85285 9.93448 7.14759 9.93448 7.30751 9.74258L10.3424 6.10073C10.5595 5.8402 10.3742 5.44466 10.0351 5.44466L3.96534 5.44466C3.62621 5.44466 3.44095 5.8402 3.65806 6.10074Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="dropdown__menu" *ngIf="isOpen">
+                <ul class="menu">
+                    <li class="dropdown__item" [ngClass]="{'dropdown__item-active': isPopular === 0}" (click)="changeFilter(0)">Все</li>
+                    <li class="dropdown__item" [ngClass]="{'dropdown__item-active': isPopular === 1}" (click)="changeFilter(1)">Популярные</li>
+                    <li class="dropdown__item" [ngClass]="{'dropdown__item-active': isPopular === 2}" (click)="changeFilter(2)">Не популярные</li>
+                </ul>
+            </div>
+        </div>
+        <button class="buttons__button" [ngClass]="{'buttons__button-active': isFav}" (click)="openFav()">
+            <span>Избранное</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="white" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
+        </button>
+    </div>
+    <event-search (shareValue)="onSearch($event)"></event-search>
+</div>
+
+

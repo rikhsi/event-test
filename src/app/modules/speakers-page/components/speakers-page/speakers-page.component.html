@@ -1,0 +1,8 @@
+<section class="wrapper">
+    <div class="container page__container">
+        <event-breadcrump></event-breadcrump>
+        <event-about></event-about>
+        <event-bar (shareSearchedValue)="searchedValue = $event" (shareIsFav)="isFav = $event" (shareFilterValue)="filteredValue = $event"></event-bar>
+        <event-speakers-list [$speakersList]="$speakersList" [isFav]="isFav" [searchedValue]="searchedValue" [filteredValue]="filteredValue" (loadMore)="onLoadMore()"></event-speakers-list>
+    </div>
+</section>

@@ -1,0 +1,9 @@
+<div class="list">
+    <ng-container *ngIf="($speakersList | async) as speakers">
+        <ng-container *ngFor="let speaker of speakers | title:searchedValue:this | popular: filteredValue | fav:isFav">
+          <event-speaker-card [isLoading]="isFiltering" [speaker]="speaker"></event-speaker-card>
+        </ng-container>
+      </ng-container>
+</div>
+
+<div eventScroll (scrolledToEnd)="onScrollEnd()"></div>

@@ -1,0 +1,23 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+
+.breadcrump
+    &__list 
+        display: flex
+        align-items: center
+        gap: 24px
+
+        @media (max-width: 767px) 
+            gap: 16px
+        
+    &__item 
+        @include text(600,14px,125%,$event_black)
+        transition: 0.5s
+        cursor: pointer
+
+        &:hover
+            color: $event_red
+
+        &-active 
+            cursor: not-allowed
+            color: $event_deep_grey

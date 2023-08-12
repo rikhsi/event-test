@@ -1,0 +1,78 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+@import './src/styles/animations.sass'
+
+.bar
+    display: flex
+    align-items: center
+    gap: 24px
+
+    @media (max-width: 575px) 
+        flex-direction: column
+        align-items: flex-start
+
+    &__buttons
+        width: 100%
+        display: flex
+        gap: 12px
+
+        @media (max-width: 575px) 
+            overflow-y: scroll 
+
+            &::-webkit-scrollbar
+                display: none
+        
+        
+.buttons 
+     &__button
+        display: flex
+        height: 32px
+        flex-wrap: nowrap
+        align-items: center
+        gap: 8px
+        padding: 8px 16px
+        border-radius: 8px
+        background: linear-gradient(45deg, #000 0%, #434343 100%)
+        border: none
+        text-transform: uppercase
+
+        &-active
+            background: linear-gradient(45deg, #FF512F 0%, #DD2476 100%)
+            opacity: 1 !important
+
+        &:hover
+            opacity: 0.8
+
+        span 
+            @include text(600,14px,100%,#FFF)
+        
+        @media (max-width:575px) 
+            order: 2
+
+.open .dropdown__menu 
+    display: block
+    animation: fadeIn 0.3s ease 1
+
+.dropdown 
+    &__menu
+        display: none
+        position: absolute
+        min-width: 160px
+        background-color: $event_white
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+        z-index: 10000
+    &__item
+        padding: 8px 16px
+        display: block
+        cursor: pointer
+        transition: 0.8s
+
+        &-active 
+            background-color: $event_card_grey !important
+            color: $event_white
+
+
+        &:hover 
+            background-color: $event_grey
+ 
+

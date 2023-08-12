@@ -1,0 +1,44 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+@import './src/styles/animations.sass'
+
+.header 
+    &__container
+        display: flex
+        flex-wrap: nowrap
+        justify-content: space-between
+        align-items: center
+        padding: 40px 0
+
+        @media (max-width: 767px) 
+            padding: 24px 0
+        
+    
+    &__logo 
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+        gap: 12px
+        @include text(700, 24px, 100%, $event_black)
+        cursor: pointer
+
+        @media (max-width: 991px) 
+            font-size: 18px
+
+        @media (max-width: 575px) 
+            font-size: 14px
+
+            svg 
+                width: 30px
+                height: 30px
+
+        &:hover svg 
+            animation: turn 0.5s ease 1
+
+        
+    
+
+        
+
+        
+

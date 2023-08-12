@@ -1,0 +1,118 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+@import './src/styles/animations.sass'
+
+.card
+    position: relative
+    max-height: 340px
+    border-radius: 16px
+    background-color: $event_grey
+    overflow: hidden
+    transition: transform 0.3s
+    cursor: pointer
+
+    &:hover
+        transform: scale(1.02)
+
+    @media (max-width: 400px) 
+        max-height: 400px
+        
+
+    &__wrapper
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    
+    &__container
+        position: relative
+        z-index: 1000
+        display: flex
+        justify-content: flex-end
+        padding: 8px
+
+    &__img
+        width: 100%
+        height: 100%
+
+        img 
+            object-fit: contain
+
+            @media (max-width: 400px) 
+                object-fit: cover
+     
+.container
+    &__helper
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        gap: 8px
+    &__rate
+        display: flex
+        align-items: center
+        gap: 4px
+        padding: 8px
+
+    &__fav
+        width: fit-content
+        padding: 0
+        border: none
+        transition: 0.3s
+
+        &-active 
+            svg path 
+                fill: $event_red
+
+        svg 
+            width: 28px
+            height: 28px
+
+    &__box
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding: 12px
+
+.box
+    &__name
+        @include text(600,16px,125%,$event_card_grey)
+
+        @media (max-width: 767px) 
+            font-size: 12px
+    &__age
+        @include text(600,14px,125%,$event_card_grey)
+
+        @media (max-width: 767px) 
+            font-size: 10px
+    &__phone
+        display: flex
+        flex-direction: column
+        gap: 4px
+
+.phone 
+    &__title
+        @include text(600,10px,125%,$event_card_grey)
+
+        @media (max-width: 767px) 
+            font-size: 7px
+    &__number
+        @include text(700,14px,125%,$event_card_grey)
+
+        @media (max-width: 767px) 
+            font-size: 10px
+
+.bg 
+    border-radius: 16px
+    background: rgba(255, 255, 255, 0.80)
+    backdrop-filter: blur(8px)
+
+.active 
+    animation: swing 0.5s ease 1
+
+.load 
+    animation: fadeIn 1s ease 1

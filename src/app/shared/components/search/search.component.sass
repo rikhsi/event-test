@@ -1,0 +1,44 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+
+:host 
+    width: 100%
+    flex: 1 1 auto
+    display: flex
+    justify-content: flex-end
+        
+.form 
+    width: 100%
+    max-width: 300px
+    display: flex
+    gap: 8px
+    align-items: center
+    padding: 8px 16px
+    border-radius: 8px
+    background-color: #EDEFF5
+    transition: 0.3s
+    cursor: text
+
+    @media (max-width:767px) 
+        max-width: 200px
+    
+    @media (max-width: 575px) 
+        max-width: 100%
+        
+    
+
+    &-active
+        outline: 1px solid $event_red
+
+    &__icon
+        cursor: pointer
+
+    &__input
+        width: 100%
+        background-color: inherit
+        outline: none
+        border: none
+        @include text(300,16px,100%,$event_black)
+
+        &::placeholder
+            color: #86898C !important

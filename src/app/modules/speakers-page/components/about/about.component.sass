@@ -1,0 +1,15 @@
+@import './src/styles/fonts.sass'
+@import './src/styles/colors.sass'
+
+.about 
+    border-top: 2px solid $event_black
+    padding-top: 40px
+
+    @media (max-width: 767px) 
+        padding-top: 24px
+    
+    &__title 
+        @include text(800,32px,100%,$event_black)
+
+        @media (max-width: 767px) 
+            font-size: 24px
